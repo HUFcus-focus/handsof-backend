@@ -12,9 +12,9 @@
         let documentSetting = function () {
             messageList();
         }
-        //메시지 데이터 조회 api
+        //메시지 데이터 조회 api (TEST)
         let messageList = function () {
-            let userId = "62dbd9ba9e8042f19ea16"
+            let userId = "62dbd9ba9e804cba2f19ea16"
             $.ajax({
                 url: "/chat/slacks/"+userId,
                 type: "get",

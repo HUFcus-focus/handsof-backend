@@ -2,6 +2,7 @@ package com.handsof.backend.domain.entity;
 
 import lombok.Builder;
 import lombok.Getter;
+import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
@@ -10,19 +11,17 @@ import java.util.Date;
 @Getter
 public class Slack {
     protected Slack(){};
-    private String userId;
+    private ObjectId userId;
     private Workspace workspace;
-    private String destinationId;
-    private String destinationName;
+    private Destination destination;
     private String message;
     private Date createdAt;
 
     @Builder
-    public Slack(String userId, Workspace workspace, String destinationId, String destinationName, String message, Date createdAt) {
+    public Slack(ObjectId userId, Workspace workspace, Destination destination, String message, Date createdAt) {
         this.userId = userId;
         this.workspace = workspace;
-        this.destinationId = destinationId;
-        this.destinationName = destinationName;
+        this.destination = destination;
         this.message = message;
         this.createdAt = createdAt;
     }
